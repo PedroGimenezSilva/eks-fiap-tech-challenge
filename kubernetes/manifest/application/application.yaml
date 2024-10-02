@@ -15,5 +15,5 @@ spec:
     spec:
       containers:
         - name: app
-          image: pedrogimenezsilva/fiap_tech_challenge:v1.0.0
+          image: pedrogimenezsilva/fiap_tech_challenge:v1.0.1
 
