@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pedido
+  namespace: pedido
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pedido
+  template:
+    metadata:
+      labels:
+        app: pedido
+    spec:
+      containers:
+        - name: pedido
+          image: pedrogimenezsilva/fiap_tech_challenge_pedidos:v1.0.0
+
