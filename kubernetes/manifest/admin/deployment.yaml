@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: application
-  namespace: app
+  name: admin
+  namespace: admin
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: app
+      app: admin
   template:
     metadata:
       labels:
-        app: app
+        app: admin
     spec:
       containers:
-        - name: app
-          image: pedrogimenezsilva/fiap_tech_challenge:v1.0.2
+        - name: admin
+          image: pedrogimenezsilva/fiap_tech_challenge_admin:v1.0.0
 
