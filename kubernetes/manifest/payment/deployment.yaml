@@ -15,5 +15,5 @@ spec:
     spec:
       containers:
         - name: payment
-          image: pedrogimenezsilva/fiap_tech_challenge_payments:v1.2.0
+          image: pedrogimenezsilva/fiap_tech_challenge_payments:v0.1.3
 
