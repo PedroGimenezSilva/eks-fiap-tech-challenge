@@ -15,5 +15,5 @@ spec:
     spec:
       containers:
         - name: admin
-          image: pedrogimenezsilva/fiap_tech_challenge_admin:v1.0.0
+          image: pedrogimenezsilva/fiap_tech_challenge_admin:v1.0.1
 
