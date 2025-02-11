@@ -15,4 +15,4 @@ spec:
     spec:
       containers:
         - name: video-extractor
-          image: pedrogimenezsilva/fiap_tech_challenge_file_update:v1.0.0
+          image: pedrogimenezsilva/fiap_tech_challenge_file_update:v1.0.1
