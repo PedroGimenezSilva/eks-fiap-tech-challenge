@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: video-extractor
+  namespace: video
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: video-extractor
+  template:
+    metadata:
+      labels:
+        app: video-extractor
+    spec:
+      containers:
+        - name: video-extractor
+          image: pedrogimenezsilva/fiap_tech_challenge_file_update:1.0.0
