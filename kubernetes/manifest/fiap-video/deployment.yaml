@@ -4,6 +4,7 @@ metadata:
   name: video-extractor
   namespace: video
 spec:
+  serviceAccountName: video-extractor-sa
   replicas: 1
   selector:
     matchLabels:
@@ -13,7 +14,6 @@ spec:
       labels:
         app: video-extractor
     spec:
-      serviceAccountName: video-extractor-sa
       containers:
         - name: video-extractor
           image: pedrogimenezsilva/fiap_tech_challenge_file_update:v1.0.2
