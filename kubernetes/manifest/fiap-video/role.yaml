@@ -12,8 +12,8 @@ rules:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
-  name: my-app-rolebinding
-  namespace: default
+  name: video-extractor-rolebinding
+  namespace: video
 subjects:
   - kind: ServiceAccount
     name: video-extractor-sa
