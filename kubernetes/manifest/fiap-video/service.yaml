@@ -4,8 +4,9 @@ metadata:
   name: video-extractor-svc
   namespace: video
   annotations:
-    service.beta.kubernetes.io/aws-load-balancer-type: "alb"
-    service.beta.kubernetes.io/aws-load-balancer-scheme: "Internet-facing"  # Indica que o ALB será internet-facing
+    service.beta.kubernetes.io/aws-load-balancer-type: "alb"  
+    service.beta.kubernetes.io/aws-load-balancer-scheme: "Internet-facing" 
+    service.beta.kubernetes.io/aws-load-balancer-ssl-ports: "https"
 spec:
   selector:
     app: video-extractor
