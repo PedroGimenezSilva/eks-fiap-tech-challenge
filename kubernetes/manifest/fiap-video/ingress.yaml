@@ -1,0 +1,31 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: video-extractor-ingress
+  namespace: video
+  annotations:
+    kubernetes.io/ingress.class: "alb"  # Usa o AWS Load Balancer Controller
+    alb.ingress.kubernetes.io/scheme: "internet-facing"  # ALB público
+    alb.ingress.kubernetes.io/target-type: "ip"  # Redireciona tráfego diretamente para os pods
+    alb.ingress.kubernetes.io/backend-protocol: "HTTP"
+    
+    # Habilita a autenticação Cognito
+    alb.ingress.kubernetes.io/auth-type: "cognito"
+    alb.ingress.kubernetes.io/auth-idp-cognito: '{"UserPoolArn":"arn:aws:cognito-idp:us-east-1:010526282742:userpool/us-east-1_z43paFSNA","UserPoolClientId":"2b9k0tv49thchi70h113mkighq","UserPoolDomain":"us-east-1z43pafsna"}'
+    
+    # Configuração adicional
+    alb.ingress.kubernetes.io/auth-scope: "openid"
+    alb.ingress.kubernetes.io/auth-session-timeout: "3600"
+    alb.ingress.kubernetes.io/auth-on-unauthenticated-request: "authenticate"
+spec:
+  rules:
+    - host: 
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: video-extractor-svc
+                port:
+                  number: 80

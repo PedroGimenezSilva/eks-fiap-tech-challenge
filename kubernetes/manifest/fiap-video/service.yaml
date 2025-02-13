@@ -3,9 +3,6 @@ kind: Service
 metadata:
   name: video-extractor-svc
   namespace: video
-  annotations:
-    service.beta.kubernetes.io/aws-load-balancer-type: "alb"  # Define que será um ALB
-    service.beta.kubernetes.io/aws-load-balancer-scheme: "internet-facing"  # ALB acessível pela internet
 spec:
   selector:
     app: video-extractor
@@ -13,4 +10,4 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 8080
-  type: LoadBalancer  # Tipo LoadBalancer, que cria um ALB automaticamente
+  type: ClusterIP  # O tráfego virá pelo Ingress e não diretamente pelo LoadBalancer
