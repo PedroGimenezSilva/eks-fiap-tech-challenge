@@ -16,4 +16,4 @@ spec:
       serviceAccountName: video-extractor-sa 
       containers:
         - name: video-extractor
-          image: pedrogimenezsilva/fiap_tech_challenge_file_update:v1.0.3
+          image: pedrogimenezsilva/fiap_tech_challenge_file_update:v1.0.4
